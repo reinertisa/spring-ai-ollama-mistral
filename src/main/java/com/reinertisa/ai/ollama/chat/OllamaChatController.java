@@ -1,6 +1,7 @@
 package com.reinertisa.ai.ollama.chat;
 
 import org.springframework.ai.chat.client.ChatClient;
+import org.springframework.ai.chat.model.ChatResponse;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,5 +33,13 @@ public class OllamaChatController {
                 .user("I'm visiting Hilton Head soon, can you give me 10 places I must visit?")
                 .stream()
                 .content();
+    }
+
+    @GetMapping("/joke")
+    public ChatResponse joke() {
+        return chatClient.prompt()
+                .user("Tell ma a dad joke about dogs")
+                .call()
+                .chatResponse();
     }
 }
