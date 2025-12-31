@@ -1,4 +1,4 @@
-package com.reinertisa.ai.ollama.multimodal;
+package com.reinertisa.ai.ollama.multimodal.image;
 
 
 import org.springframework.ai.image.*;
